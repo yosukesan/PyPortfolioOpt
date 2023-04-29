@@ -25,6 +25,9 @@ jobs:
               with:
                   python-version: ${{ matrix.python-version }}
                   cache: 'pip'
+            - name: Check OS
+              run: |
+                  python -c "import platform; print(platform.system())"
             - name: Install dependencies
               run: |
                   pip install -r requirements.txt
